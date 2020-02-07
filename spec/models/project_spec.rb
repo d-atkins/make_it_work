@@ -25,5 +25,17 @@ RSpec.describe Project, type: :model do
 
       expect(project1.number_of_contestants).to eq(2)
     end
+
+    it "#average_contestant_experience" do
+      challenge1 = Challenge.create!(theme: "Apartment Furnishings", project_budget: 50)
+      project1 = Project.create!(name: "Litfit", material: "Lamp Shade", challenge: challenge1)
+      contestant1 = Contestant.create!(name: "Kentaro Kameyama", age: 32, hometown: "Denver, CO", years_of_experience: 10)
+      contestant2 = Contestant.create!(name: "Jay McCarroll", age: 37, hometown: "Austin, TX", years_of_experience: 15)
+
+      project1.contestants << contestant1
+      project1.contestants << contestant2
+
+      expect(project1.average_contestant_experience).to eq(12.5)
+    end
   end
 end
