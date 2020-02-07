@@ -8,8 +8,8 @@ RSpec.describe 'As a visitor' do
       project1 = Project.create!(name: "Litfit", material: "Lamp Shade", challenge: challenge1)
       project2 = Project.create!(name: "Rug Tuxedo", material: "Rug", challenge: challenge2)
       project3 = Project.create!(name: "LeatherFeather", material: "Leather", challenge: challenge2)
-      contestant1 = Contestant.create(name: "Kentaro Kameyama", age: 32, hometown: "Denver, CO", years_of_experience: 10)
-      contestant2 = Contestant.create(name: "Jay McCarroll", age: 37, hometown: "Austin, TX", years_of_experience: 15)
+      contestant1 = Contestant.create!(name: "Kentaro Kameyama", age: 32, hometown: "Denver, CO", years_of_experience: 10)
+      contestant2 = Contestant.create!(name: "Jay McCarroll", age: 37, hometown: "Austin, TX", years_of_experience: 15)
 
       project1.contestants << contestant1
       project2.contestants << contestant1
