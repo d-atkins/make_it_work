@@ -1,0 +1,11 @@
+<% @contestants.each do |contestant| %>
+  <section id="contestant-<%= contestant.id %>">
+    <p><%= contestant.name %></p>
+    <p>Projects:
+      <% contestant.projects.each do |project| %>
+        <%= "#{project.name}," if project !=  contestant.projects.last %>
+        <%= "#{project.name}" if project ==  contestant.projects.last %>
+      <% end %>
+    </p>
+  </section><br>
+<% end %>
