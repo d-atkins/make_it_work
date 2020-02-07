@@ -18,7 +18,7 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content("Material: Lamp Shade")
       expect(page).to have_content("Challenge Theme: Apartment Furnishings")
       expect(page).to have_content("Number of Contestants: #{project1.number_of_contestants}")
-      expect(page).to have_content("Average Contestant Experience: #{project1.average_contestant_experience}")
+      expect(page).to have_content("Average Contestant Experience: #{project1.average_contestant_experience.round(2)}")
     end
   end
 end
